@@ -39,7 +39,7 @@
                 //OrderDetailViewModel
                 objOrderViewModel.PaymentTypeId = $("#PaymentType").val();
                 objOrderViewModel.CustomerId = $("#Customer").val();
-                objOrderViewModel.FinalTotal = $("#txtFinalTotal").val();
+                objOrderViewModel.FinalTotal = parseFloat($("#txtFinalTotal").val());
 
                 
 
@@ -56,6 +56,7 @@
 
             objOrderViewModel.ListOfOrderDetailViewModel = ListOfOrderDetailViewModel;
             /*alert("Vrednost txtFinalTotal: " + $("#txtFinalTotal").val());*/
+        
 
             $.ajax({
                     async: true,
@@ -74,7 +75,7 @@
 
             });
 
-  }
+    }
         function CalculateBalance() {
 
             var FinalTotal = $("#txtPaymentTotal").val();
